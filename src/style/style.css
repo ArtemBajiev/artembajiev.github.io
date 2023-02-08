@@ -1,0 +1,660 @@
+:root {
+    --body: #112D32;
+    --card: #254E58;
+    --strip: rgb(243, 243, 243);
+}
+
+* {
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 99;
+    transition: top 1s;
+
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+.hamburger {
+    transition: all 2s;
+}
+
+.header-menu-mobile {
+    margin: 0px;
+    overflow: hidden;
+    opacity: 0;
+    height: 0px;
+}
+
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0px auto;
+    border-bottom: 1px solid rgba(186, 186, 186, 0.4);
+    z-index: 10;
+    height: 100px;
+
+
+}
+
+.header-menu {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+
+}
+.header-menu a
+{
+    position: relative;
+}
+.header-menu a::before
+{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0%;
+    background-color: #254E58;
+    top: 25px;
+    transition: width .7s ease-in-out;
+}
+.header-menu a:hover::before
+{
+    width: 100%;
+}
+
+.header-menu a {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    color: #fff;
+}
+
+.header-logo {
+    background-image: url("/src/img/logo.png");
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    padding: 0px;
+    background-repeat: no-repeat;
+    margin-right: 50px;
+}
+
+.close-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 20;
+    display: none;
+
+}
+
+/* =======strip====== */
+.strip-card {
+    /* display: flex; */
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px;
+    height: 100%;
+    max-height: 350px;
+}
+
+.img-strip-card {
+   
+    margin-bottom: 20px;
+   display: block;
+    width: 50%;
+    align-items: center;
+    margin: 0px auto 20px auto;
+    
+
+}
+
+
+.strip-card-text
+{
+    display: block;
+
+}
+
+.strip-card-item {
+   text-align: center;
+    padding: 20px;
+    background-color: var(--card);
+    border-radius: 10px;
+    margin: 0px;
+    
+    
+
+}
+
+
+.strip-header {
+    text-align: center;
+    display: block;
+
+    margin-bottom: 20px;
+    
+}
+
+#strip {
+    width: 100%;
+    padding: 30px;
+    background-color: var(--body);
+
+    margin-bottom: 30px;
+}
+
+/* ============= */
+#main {
+    margin-bottom: 40px;
+}
+
+.intro {
+    max-height: 80vh;
+    overflow: hidden;
+    position: relative;
+
+
+    background-size: cover;
+    transition: left 1.6s ease-in-out;
+    left: 100vw;
+}
+
+.shadow-intro {
+    position: absolute;
+    top: 0px;
+    width: 9px;
+    left: 160vw;
+    height: 80vh;
+    z-index: 10;
+    transition: left 1.5s;
+    background-color: rgba(255, 0, 0, 0);
+    box-shadow: 140px 0px 80px 40px rgba(255, 255, 255, 0.253);
+}
+
+.intro:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(23, 37, 31, 0.521);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    z-index: 3;
+
+}
+
+.backgraund-intro {
+    position: relative;
+    background-color: #3d484b;
+    /* top: -120px; */
+
+}
+.line-animated-all
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0vh;
+    top: 22px;
+}
+.line-anim-item{
+    width: 10px;
+    height: 3px;
+    z-index: 30;
+    background-color: white;
+    position: relative;
+    
+    transition: width 1.5s ease-in-out;
+}
+.animated {
+    position: absolute;
+    display: inline;
+    transition: all 1.5s;
+    transform: scale(0);
+    opacity: 0;
+    max-width: 580px;
+    height: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+.header-intro
+{
+    letter-spacing: 10px;
+    font-weight: 300;
+    position: relative;
+    
+    padding: 2px;
+}
+.intro__title {
+    margin: 0;
+
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.video {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+    
+}
+
+.video__media {
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+
+    left: 0;
+}
+
+
+
+/* =========================== */
+#about {
+    margin-bottom: 40px;
+}
+
+.picture1 {
+    background-image: url("/src/img/peyzazhi-golden-field-pole.jpg");
+    background-size: cover;
+    height: 600px;
+    border-radius: 7px;
+
+}
+
+.about-text {
+    font-size: 24px;
+}
+
+/*  */
+
+
+
+.wrapper {
+    height: 420px;
+    width: 100%;
+    display: flex;
+    border-radius: 7px 7px 7px 7px;
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    background-color: var(--card);
+}
+
+.product-img {
+
+    height: 100%;
+
+    border-radius: 7px 0 0 7px;
+    max-width: 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40%;
+    background-color: white;
+}
+
+#prod1 {
+    background-position: -120px center;
+    background-image: url("/src/img/psheno.png");
+}
+
+#prod2 {
+    background-position: -10px center;
+    background-image: url("/src/img/kykyruza.png");
+}
+
+
+
+.product-info {
+    float: left;
+    height: 420px;
+    width: 60%;
+    border-radius: 0 7px 10px 7px;
+    background-color: var(--card);
+    position: relative;
+    right: 5px;
+}
+
+.product-text {
+    height: 300px;
+    width: 100%;
+}
+
+.product-text h1 {
+    margin: 0 0 0 38px;
+    padding-top: 52px;
+    font-size: 34px;
+    color: #474747;
+}
+
+.product-text h1 {
+    font-family: 'Bentham', serif;
+}
+
+.product-text h2 {
+    margin: 0 0 47px 38px;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 0.2em;
+}
+
+.product-text p {
+    height: 125px;
+    margin: 0 0 0 38px;
+    font-family: 'Playfair Display', serif;
+    color: #8d8d8d;
+    line-height: 1.7em;
+    font-size: 15px;
+    font-weight: lighter;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#price {
+    margin-bottom: 40px;
+}
+
+.card1 {
+    background-image: url("/src/img/prod_001.jpg");
+}
+
+.card2 {
+    background-image: url("/src/img/кукуруза.jpg");
+}
+
+.card {
+
+
+    color: white;
+    padding-top: 55%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    height: 400px;
+    transition: all 1s;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.card-text {
+    display: block;
+    padding-left: 70px;
+    box-shadow: 0px 40px 90px 20px black;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.24);
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.384);
+}
+
+
+
+
+
+/* =========contacts=========== */
+#contact {
+    margin-bottom: 40px;
+}
+
+.map-frame {
+    width: 100%;
+    height: 40vh;
+    border-radius: 7px 0px 0px 7px;
+
+}
+
+.contacts-right {
+    background-color: var(--card);
+    width: 100%;
+    border-radius: 0px 7px 7px 0px;
+    height: 40vh;
+    color: white;
+    padding: 20px 30px;
+}
+
+.map-and-contacts {}
+
+
+
+/* ======footer======= */
+footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    background-color: #3d484b;
+    color: rgb(255, 255, 255);
+    border-top: 2px solid #b4b4b4;
+}
+.footet-flex
+{
+    display: flex;
+    justify-content: space-between;
+}
+.contacts-footer-item
+{
+    position: relative;
+    padding-left: 25px;
+}
+.mail-marker::before
+{
+    content: "";
+    background-image: url("/src/img/email.svg");
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+}
+.map-marker::before
+{
+    content: "";
+    background-image: url("/src/img/gps.svg");
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+
+}
+.phone-marker::before
+{
+    content: "";
+    background-image: url("/src/img/phone.svg");
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+}
+
+
+@media (max-width: 576px) {
+  
+    .header {
+        position: static;
+        left: 0px;
+        right: 0px;
+        z-index: 10;
+
+    }
+
+    .header-menu a {
+        font-size: 8px;
+    }
+
+    .header-intro {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+
+   
+
+    .header-container {
+        height: 50px;
+    }
+
+    .header-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .intro__content {
+        top: 50px;
+    }
+
+    .backgraund-intro {
+        top: 0px;
+    }
+
+    .hamburger-icon {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .header-menu-mobile {
+        width: 100%;
+        opacity: 0;
+        flex-direction: column;
+        position: absolute;
+        left: 0px;
+        top: 50px;
+        z-index: 40;
+        background-color: white;
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+        display: flex;
+        opacity: 0;
+
+    }
+
+    .header-menu-mobile a {
+        color: rgb(255, 255, 255);
+        padding-left: 10px;
+        font-size: 12px;
+
+    }
+    .contacts-right
+    {
+        border-radius: 7px;
+    }
+    .map-frame
+    {
+        border-radius: 7px;
+    }
+}
+
+
+    body {
+        color: white;
+        background-color: var(--body);
+
+    }
+
+
+    .header-menu-mobile {
+        background-color: rgba(36, 36, 36, 0.671);
+    }
+
+    .header-menu-mobile a {
+        color: white;
+    }
+
+
+
+
+
+    .product-text p {
+        color: white;
+    }
+
+    .product-text h2 {
+        color: white;
+    }
+
+    .product-text h1 {
+        color: white;
+    }
+
+
+
