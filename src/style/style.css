@@ -242,7 +242,7 @@ body {
     top: 22px;
 }
 .line-anim-item{
-    width: 10px;
+    width: 2px;
     height: 2px;
     z-index: 30;
     background-color: white;

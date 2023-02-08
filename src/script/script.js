@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded",function(){
    function atload() {dom_rdy()}window.onload=atload;
     
-   const mediaQuery = window.matchMedia('(min-width: 576px)')
-if (mediaQuery.matches) {
-  document.querySelectorAll(".line-anim-item")[0].style.width="30px"
-}
+
  function dom_rdy(){
 
     setTimeout(function() {
@@ -28,6 +25,11 @@ if (mediaQuery.matches) {
      setTimeout(function() {
         document.querySelectorAll(".line-anim-item")[0].style.width="50px"
         document.querySelectorAll(".line-anim-item")[1].style.width="50px"
+        const mediaQuery = window.matchMedia('(max-width: 576px)')
+        if (mediaQuery.matches) {
+          document.querySelectorAll(".line-anim-item")[0].style.width="30px"
+          document.querySelectorAll(".line-anim-item")[1].style.width="30px"
+        }
      }, (2500));
 
 
