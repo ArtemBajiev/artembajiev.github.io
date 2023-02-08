@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded",function(){
    function atload() {dom_rdy()}window.onload=atload;
     
-   
+   const mediaQuery = window.matchMedia('(min-width: 576px)')
+if (mediaQuery.matches) {
+  document.querySelectorAll(".line-anim-item")[0].style.width="30px"
+}
  function dom_rdy(){
 
     setTimeout(function() {
@@ -23,8 +26,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
      }, (2600));
      setTimeout(function() {
-        document.querySelectorAll(".line-anim-item")[0].style.width="80px"
-        document.querySelectorAll(".line-anim-item")[1].style.width="80px"
+        document.querySelectorAll(".line-anim-item")[0].style.width="50px"
+        document.querySelectorAll(".line-anim-item")[1].style.width="50px"
      }, (2500));
 
 
