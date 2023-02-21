@@ -10,18 +10,11 @@ document.addEventListener("DOMContentLoaded",function(){
     setTimeout(function() {
         document.querySelector(".intro").style.left="0px"
      }, (200));
-     setTimeout(function() {
-        document.querySelector(".shadow-intro").style.left="-20vw"
-        
-     }, (1200));
+
      setTimeout(function() {
       document.querySelector(".animated").style.opacity="1"
       
    }, (2000));
-     setTimeout(function() {
-        document.querySelector(".shadow-intro").style.display="none"
-
-     }, (2600));
      setTimeout(function() {
         document.querySelectorAll(".line-anim-item")[0].style.width="50px"
         document.querySelectorAll(".line-anim-item")[1].style.width="50px"

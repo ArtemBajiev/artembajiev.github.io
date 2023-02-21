@@ -23,6 +23,7 @@ li {
     right: 0px;
     z-index: 99;
     transition: top 1s;
+    
 
 }
 
@@ -148,9 +149,14 @@ body {
     background-color: var(--card);
     border-radius: 10px;
     margin: 0px;
-    
+    position: relative;
+    left: -100vw;
+    transition: left 1s ease-in-out;
     
 
+}
+.active{
+    left: 0px;
 }
 
 
@@ -176,7 +182,8 @@ body {
 }
 
 .intro {
-    max-height: 80vh;
+    max-height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     position: relative;
 
@@ -186,17 +193,6 @@ body {
     left: 100vw;
 }
 
-.shadow-intro {
-    position: absolute;
-    top: 0px;
-    width: 9px;
-    left: 160vw;
-    height: 80vh;
-    z-index: 10;
-    transition: left 1.5s;
-    background-color: rgba(255, 0, 0, 0);
-    box-shadow: 140px 0px 80px 40px rgba(255, 255, 255, 0.253);
-}
 
 .intro:after {
     content: "";
@@ -284,6 +280,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
 
 }
 
@@ -295,9 +292,9 @@ body {
 }
 
 .video__media {
-    width: 100%;
-    height: auto;
-
+    min-width: 100%;
+    min-height: 100vh;
+top: 0px;
     position: absolute;
 
     left: 0;
@@ -558,7 +555,7 @@ footer {
     }
 
     .header {
-        position: static;
+        
         left: 0px;
         right: 0px;
         z-index: 10;
