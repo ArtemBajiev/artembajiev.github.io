@@ -93,6 +93,8 @@ body {
     margin: 0;
     font-family: Tahoma, sans-serif;
     color: #fff;
+    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .header-logo {
@@ -149,10 +151,7 @@ body {
     background-color: var(--card);
     border-radius: 10px;
     margin: 0px;
-    position: relative;
-    left: -100vw;
-    transition: left 1s ease-in-out;
-    
+   
 
 }
 .active{
@@ -177,8 +176,8 @@ body {
 }
 
 /* ============= */
-#main {
-    margin-bottom: 40px;
+#hero-section {
+    margin-bottom: 80px;
 }
 
 .intro {
@@ -307,16 +306,19 @@ top: 0px;
     margin-bottom: 40px;
 }
 
-.picture1 {
-    background-image: url("/src/img/peyzazhi-golden-field-pole.jpg");
-    background-size: cover;
-    height: 600px;
+.about-us__picture {
+    
+   
+    height: 600px;    
     border-radius: 7px;
-
+    margin-left: auto;
+    display: block;
 }
 
 .about-text {
     font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 200;
 }
 
 /*  */
@@ -541,6 +543,29 @@ footer {
     left: 0px;
     top: 3px;
 }
+
+
+/* scroll Bar */
+/* W3C standard
+   сейчас только для Firefox */
+   * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(133, 133, 133) rgb(255, 255, 255);
+  }
+  
+  /* для Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+    height: 12px;
+    width: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #16393f;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.253);
+    border-radius: 5px;
+    
+  }
 
 
 @media (max-width: 576px) {

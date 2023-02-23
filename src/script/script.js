@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded",function(){
     }, (1600));
     setTimeout(function() {
         document.querySelector(".intro").style.left="0px"
+        document.body.style.overflow="auto"
      }, (200));
 
      setTimeout(function() {
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded",function(){
           document.querySelectorAll(".line-anim-item")[1].style.width="30px"
         }
      }, (2500));
+    
 
 
 }
@@ -103,4 +105,50 @@ console.log(scrollTop)
      humburgerIcon.addEventListener("click", HamburgerMenu)
      humburgerBackClose.addEventListener("click", HamburgerMenu)
 });
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+
+if (ScrollTrigger.isTouch !== 1) {
+   ScrollSmoother.create({
+		wrapper: '.scroll',
+		content: '.scroll__content',
+		smooth: 1.5,
+		effects: true
+	})
+	gsap.fromTo('.backgraund-intro', { opacity: 1 }, {
+		opacity: 0,
+		scrollTrigger: {
+			trigger: '.backgraund-intro',
+			start: 'center',
+			end: '820',
+			scrub: true
+		}
+	})
+   let itemsL = gsap.utils.toArray('.push-right')
+
+itemsL.forEach(item => {
+   gsap.fromTo(item, { opacity: 0, x: -200 }, {
+      opacity: 1, x: 0,
+      scrollTrigger: {
+         trigger: item,
+         start: '-650',
+         end: '-100',
+       
+      }
+   })
+})
+let itemsR = gsap.utils.toArray('.push-left')
+itemsR.forEach(item => {
+   gsap.fromTo(item, { opacity: 0, x: 300 }, {
+      opacity: 1, x: 0,
+      scrollTrigger: {
+         trigger: item,
+         start: '-650',
+         end: '-100',
+        
+      }
+   })
+})
+
+}
+
 
