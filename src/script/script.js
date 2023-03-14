@@ -108,12 +108,13 @@ console.log(scrollTop)
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
 if (ScrollTrigger.isTouch !== 1) {
-   ScrollSmoother.create({
+   let smoother = ScrollSmoother.create({
 		wrapper: '.scroll',
 		content: '.scroll__content',
 		smooth: 1.5,
 		effects: true
 	})
+   
 	gsap.fromTo('.backgraund-intro', { opacity: 1 }, {
 		opacity: 0,
 		scrollTrigger: {
@@ -148,7 +149,29 @@ itemsR.forEach(item => {
       }
    })
 })
+let AnimHeader = gsap.utils.toArray('.header-anim')
+AnimHeader.forEach(item => {
+   gsap.fromTo(item, { opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+         trigger: item,
+         start: '-650',
+         end: '-100',
+        
+      }
+   })
+})
 
+gsap.utils.toArray(".header-menu a").forEach(function (button, i) {
+   button.addEventListener("click", (e) => {
+     var id = e.target.getAttribute("href");
+     console.log(id);
+     smoother.scrollTo(id, true, "top top");
+     e.preventDefault();
+   });
+ });
 }
+
+
 
 
